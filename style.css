@@ -1,0 +1,9 @@
+@font-face {
+    font-family: myFont;
+    src: url(coolvetica.otf);
+}
+
+.name-window__title {
+    font-family: myFont;
+    color: red;
+}
