@@ -1,3 +1,7 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 @font-face {
     font-family: myFont;
     src: url(fonts/coolvetica.otf);
@@ -11,6 +15,9 @@ body {
 
 .name-window {
     display: flex;
+    background: url(backgrounds/name-window.jpg);
+    background-size: 100%;
+    
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -24,7 +31,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 300px;
     width: 600px;
     box-sizing: border-box;
@@ -32,8 +39,8 @@ body {
 
 .name-window__title {
     font-family: myFont;
-    color: blue;
-    font-size: 70px;
+    color: #474747;
+    font-size: 80px;
     letter-spacing: 6px;
     text-align: center;
     margin: 0;
@@ -42,16 +49,18 @@ body {
 
 .name-window__subtitle {
     font-family: myFont;
+    color: #646464;
     letter-spacing: 2px;
     width: fit-content;
     text-align: center;
-    margin: 2px 0 0 0;
+    margin: 4px 0 0 0;
     font-size: 22px;
 }
 
 .name-window__text {
     text-align: center;
     margin: 30px 0 0 0;
+    font-size: 16px;
 }
 
 .name-window__container-name {
@@ -87,14 +96,15 @@ body {
     transition: 0.2s ease;
 }
 
-.name-window__name:focus, 
-.name-window__name:valid  {
+/* I'm going to left this commented for now */
+.name-window__name:focus/* , 
+.name-window__name:valid  */ {
     color: #000;
     border: 2px solid blue;
 }
 
-.name-window__name:focus + .name-window__label-line, 
-.name-window__name:valid + .name-window__label-line  {
+.name-window__name:focus + .name-window__label-line/* , 
+.name-window__name:valid + .name-window__label-line */  {
     color: blue;
     height: 30px;
     line-height: 30px;
