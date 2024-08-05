@@ -13,6 +13,7 @@ body {
     padding: 0;
 }
 
+/* name window section */
 .name-window {
     display: flex;
     background: url(backgrounds/name-window.jpg);
@@ -132,3 +133,8 @@ body {
     color: #757575;
 }
 
+
+/* projects section */
+.projects {
+    display: none;
+}
