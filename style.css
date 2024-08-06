@@ -106,14 +106,14 @@ body {
 }
 
 /* I'm going to left this commented for now */
-.name-window__name:focus/* , 
-.name-window__name:valid  */ {
+.name-window__name:focus, 
+.name-window__name:valid  {
     color: #000;
     border: 2px solid #474747;
 }
 
-.name-window__name:focus + .name-window__label-line/* , 
-.name-window__name:valid + .name-window__label-line */  {
+.name-window__name:focus + .name-window__label-line, 
+.name-window__name:valid + .name-window__label-line  {
     color: #474747;
     height: 30px;
     line-height: 30px;
