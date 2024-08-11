@@ -32,7 +32,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid blue; */
     height: 300px;
     width: 600px;
     box-sizing: border-box;
@@ -105,7 +104,6 @@ body {
     transition: 0.2s ease;
 }
 
-/* I'm going to left this commented for now */
 .name-window__name:focus, 
 .name-window__name:valid  {
     color: #000;
@@ -134,7 +132,107 @@ body {
 }
 
 
-/* projects section */
+/* ----projects section---- */
 .projects {
     display: none;
 }
+
+/* nav-bar */
+.projects__nav {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background: #1D2125;
+    padding: 15px 0;
+    justify-content: center;
+}
+
+.projects__logo-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    left: 20px;
+    transform: translate(0, -50%);
+    column-gap: 10px;
+}
+
+.projects__logo,
+.projects__settings,
+.projects__user {
+    margin: 0;
+    color: #909090;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.projects__logo-name {
+    margin: 0;
+    font-family: myFont;
+    color: #909090;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.projects__search-container {
+    position: relative;
+}
+
+.projects__search-icon {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    line-height: 16px;
+    color: #757575;
+    transform: translate(0, -50%);
+}
+
+.projects__search {
+    color: #999999;
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    background: transparent;
+    border: 2px solid #757575;
+    border-radius: 40px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 30px 0 40px;
+}
+
+.projects__close {
+    display: none;
+}
+
+.projects__close-icon {
+    position: absolute;
+    color: #909090;
+    right: 15px;
+    top: 15px;
+    transform: translate(0, -50%);
+    line-height: 16px;
+}
+
+.projects__search:focus {
+    border-color: #999999;
+    border-width: 2px;
+}
+
+.projects__search:focus + .projects__search-icon {
+    color: #999999;
+}
+
+.projects__user-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    right: 20px;
+    transform: translate(0, -50%);
+    column-gap: 15px;
+}
+
