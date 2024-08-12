@@ -27,10 +27,10 @@
     </section>
     <section class="projects">
         <nav class="projects__nav">
-            <div class="projects__logo-container">
+            <a href="" class="projects__logo-container">
                 <i class="fa-brands fa-trello projects__logo"></i>
                 <p class="projects__logo-name">List-making</p>
-            </div>
+            </a>
             <div class="projects__search-container">
                 <input type="text" class="projects__search" placeholder="Search your board">
                 <i class="fa-solid fa-magnifying-glass projects__search-icon"></i>
@@ -39,10 +39,36 @@
                 </a>
             </div>
             <div class="projects__user-container">
-                <i class="fa-solid fa-gear projects__settings"></i>
-                <i class="fa-solid fa-user projects__user"></i>
+                <a href="" class="projects__settings">
+                    <i class="fa-solid fa-gear projects__settings-icon"></i>
+                </a>
+                <a href="" class="projects__user">
+                    <i class="fa-solid fa-user projects__user-icon"></i>
+                </a>
             </div>
         </nav>
+        <div class="projects__sidebar">
+            <a href="" class="projects__menu icon-container">
+                <i class="fa-solid fa-bars projects__menu-icon sidebar-icon"></i>
+                <p class="projects__icon-text">Menu</p>
+            </a>
+            <a href="" class="projects__board icon-container">
+                <i class="fa-solid fa-file-lines projects__board-icon sidebar-icon"></i>
+                <p class="projects__icon-text">Boards</p>
+            </a>
+            <a href="" class="projects__addBoard icon-container">
+                <i class="fa-solid fa-file-circle-plus projects__addBoard-icon sidebar-icon"></i>
+                <p class="projects__icon-text">Add boards</p>
+            </a>
+            <a href="" class="projects__trash icon-container">
+                <i class="fa-solid fa-trash-can projects__trash-icon sidebar-icon"></i>
+                <p class="projects__icon-text">Trash</p>
+            </a>
+            <a href="" class="projects__help icon-container">
+                <i class="fa-solid fa-circle-question projects__help-icon sidebar-icon"></i>
+                <p class="projects__icon-text">Help</p>
+            </a>
+        </div>
     </section>
     <script src="code.js"></script>
 </body>
