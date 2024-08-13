@@ -15,7 +15,7 @@ body {
 
 /* name window section */
 .name-window {
-    display: flex;
+    display: none;
     background: url(backgrounds/name-window.jpg);
     background-size: 100%;
     justify-content: center;
@@ -64,6 +64,7 @@ body {
 }
 
 .name-container {
+    position: relative;
     display: flex;
     height: 40px;
     margin: 20px 0 0 0;
@@ -75,7 +76,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 50px;
     line-height: 30px;
 }
@@ -128,6 +129,16 @@ body {
 .continue__btn:hover {
     font-size: 30px;
     color: #757575;
+}
+
+.name-container__text-error {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    font-size: 14px;
+    color: #e62a2a;
+    width: 230px;
 }
 
 
