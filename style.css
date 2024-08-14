@@ -131,6 +131,10 @@ body {
     color: #757575;
 }
 
+.input__name.error {
+    border: 2px solid #e62a2a;
+}
+
 .name-container__text-error {
     display: none;
     position: absolute;
@@ -140,7 +144,6 @@ body {
     color: #e62a2a;
     width: 230px;
 }
-
 
 /* ----projects section---- */
 .projects {

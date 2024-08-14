@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
             const invalidName = document.querySelector(".name-container__text-error");
 
             if (nameValidation < 4) {
-                usernameInput.style.border = "2px solid #e62a2a";
+                usernameInput.classList.add("error");
                 labelLine.style.color = "#e62a2a";
                 invalidName.style.display = "block";
                 return;
