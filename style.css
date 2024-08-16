@@ -262,6 +262,11 @@ body {
     background: #3E4043;
 }
 
+.projects__content {
+    display: flex;
+}
+
+/* sidebar */
 .sidebar {
     background: #1D2125;
     position: fixed;
@@ -303,4 +308,10 @@ body {
     transform: translate(0, -50%);
 }
 
+.main {
+    display: flex;
+    padding: 0 0 0 150px;
+    width: 100%;
+    justify-content: center;
+}
 
