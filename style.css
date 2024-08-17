@@ -135,6 +135,17 @@ body {
     border: 2px solid #e62a2a;
 }
 
+.error {
+    color: #e62a2a;
+}
+
+.input__name:valid + .input__label-line.error,
+.input__name:focus + .input__label-line.error {
+    color: #e62a2a;
+}
+
+
+
 .name-container__text-error {
     display: none;
     position: absolute;
