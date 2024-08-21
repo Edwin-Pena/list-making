@@ -7,6 +7,28 @@
     src: url(fonts/coolvetica.otf);
 }
 
+/* ------var styles------- */
+:root {
+    --primary-grey: #474747;
+    --secondary-frey: #757575;
+    --error-color: #e62a2a;
+}
+
+
+/* ------Gobal classes------- */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.visible-flex {
+    display: flex;
+}
+
+
 body {
     height: 100%;
     margin: 0;
@@ -15,7 +37,6 @@ body {
 
 /* name window section */
 .name-window {
-    display: none;
     background: url(backgrounds/name-window.jpg);
     background-size: 100%;
     justify-content: center;
@@ -38,7 +59,7 @@ body {
 
 .name-window__title {
     font-family: myFont;
-    color: #474747;
+    color: var(--primary-grey);
     font-size: 80px;
     letter-spacing: 6px;
     text-align: center;
@@ -59,7 +80,7 @@ body {
 .name-window__text {
     text-align: center;
     margin: 25px 0 0 0;
-    color: #474747;
+    color: var(--primary-grey);
     font-size: 16px;
 }
 
@@ -89,7 +110,7 @@ body {
     line-height: 40px;
     padding: 0 0 0 12px;
     background: transparent;
-    border: 1px solid #757575;
+    border: 1px solid var(--secondary-frey);
     border-radius: 5px;
     outline: none;
     box-sizing: border-box;
@@ -98,7 +119,7 @@ body {
 
 .input__label-line {
     position: absolute;
-    color: #757575;
+    color: var(--secondary-frey);
     padding: 0 10px;
     background: #fff;
     transition: 0.2s ease;
@@ -107,12 +128,12 @@ body {
 .input__name:focus, 
 .input__name:valid  {
     color: #000;
-    border: 2px solid #474747;
+    border: 2px solid var(--primary-grey);
 }
 
 .input__name:focus + .input__label-line, 
 .input__name:valid + .input__label-line  {
-    color: #474747;
+    color: var(--primary-grey);
     height: 30px;
     line-height: 30px;
     padding: 0 6px;
@@ -122,43 +143,35 @@ body {
 
 .continue__btn {
     font-size: 30px;
-    color: #474747;
+    color: var(--primary-grey);
     transition: color .2s;
 }
 
 .continue__btn:hover {
     font-size: 30px;
-    color: #757575;
+    color: var(--secondary-frey);
 }
 
 .input__name.error {
-    border: 2px solid #e62a2a;
+    border: 2px solid var(--error-color);
 }
 
 .error {
-    color: #e62a2a;
+    color: var(--error-color);
 }
 
 .input__name:valid + .input__label-line.error,
 .input__name:focus + .input__label-line.error {
-    color: #e62a2a;
+    color: var(--error-color);
 }
 
-
-
 .name-container__text-error {
-    display: none;
     position: absolute;
     top: 30px;
     left: 5px;
     font-size: 14px;
-    color: #e62a2a;
+    color: var(--error-color);
     width: 230px;
-}
-
-/* ----projects section---- */
-.projects {
-    display: none;
 }
 
 /* nav-bar */
@@ -210,7 +223,7 @@ body {
     left: 15px;
     top: 15px;
     line-height: 16px;
-    color: #757575;
+    color: var(--secondary-frey);
     transform: translate(0, -50%);
 }
 
@@ -225,10 +238,6 @@ body {
     outline: none;
     box-sizing: border-box;
     padding: 0 30px 0 40px;
-}
-
-.nav__search-close {
-    display: none;
 }
 
 .nav__search-close-icon {

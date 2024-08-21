@@ -9,7 +9,8 @@
     <title>List-making</title>
 </head>
 <body>
-    <section class="name-window">
+    <!-- section that shows the page where the user can enter their name and continue to the other section where the projects are located -->
+    <section class="name-window hidden">
         <div class="name-window__container">
             <h1 class="name-window__title">Welcome</h1>
             <h2 class="name-window__subtitle">To our list-making app</h2>
@@ -22,11 +23,12 @@
                 <a class="continue" href="#">
                     <i class="fa-solid fa-circle-arrow-right continue__btn"></i>
                 </a>
-                <p class="name-container__text-error">Please enter a valid name that has more than 4 letters.</p>
+                <p class="name-container__text-error hidden">Please enter a valid name that has more than 4 letters.</p>
             </div>
         </div>
     </section>
-    <section class="projects">
+    <!-- section that shows the page containing the projects that the user has saved -->
+    <section class="projects hidden">
         <nav class="nav">
             <a href="#" class="nav__logo-container">
                 <i class="fa-brands fa-trello nav__logo"></i>
@@ -35,7 +37,7 @@
             <div class="nav__search-container">
                 <input type="text" class="nav__search" placeholder="Search your board">
                 <i class="fa-solid fa-magnifying-glass nav__search-icon"></i>
-                <a href="#" class="nav__search-close">
+                <a href="#" class="nav__search-close hidden">
                     <i class="fa-solid fa-xmark nav__search-close-icon"></i>
                 </a>
             </div>
