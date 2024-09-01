@@ -12,6 +12,7 @@
     --primary-grey: #474747;
     --secondary-frey: #757575;
     --error-color: #e62a2a;
+    --hover-grey: #3E4043;
 }
 
 
@@ -279,7 +280,7 @@ body {
 }
 
 .nav__user-icon:hover {
-    background: #3E4043;
+    background: var(--hover-grey);
 }
 
 .projects__content {
@@ -309,7 +310,7 @@ body {
 }
 
 .sidebar__icon-container:hover {
-    background: #3E4043;
+    background: var(--hover-grey);
 }
 
 .sidebar__icon {
@@ -330,8 +331,66 @@ body {
 
 .main {
     display: flex;
+    flex-direction: column;
     padding: 0 0 0 150px;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
+.name-title {
+    font-size: 75px;
+    line-height: 70px;
+    color: #1D2125;
+    margin: 50px 0 0 0 ;
+}
+
+/* .username-saved {
+    
+} */
+
+.name-message {
+    font-size: 24px;
+    margin: 6px 0 0 0;
+}
+
+.boards {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0 0 45px;
+    box-sizing: border-box;
+    column-gap: 15px;
+}
+
+.boards__title {
+    font-size: 40px;
+    margin: 0;
+    line-height: 30px;
+}
+
+.sort {
+    display: flex;
+    position: relative;
+    top: 3px;
+    align-items: center;
+    background: #1D2125;
+    color: #fff;
+    height: 25px;
+    padding: 0 10px;
+    border-radius: 20px;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.sort:hover {
+    background: var(--hover-grey);
+}
+
+.sort__icon {
+    font-size: 15px;
+}
+
+.sort__text {
+    font-size: 14px;
+}

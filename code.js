@@ -4,6 +4,9 @@
 const inputSearch = document.querySelector(".nav__search");
 const closeSearchBtn = document.querySelector(".nav__search-close");
 const usernameInput = document.getElementById("username");
+const nameSaved = document.getElementById("saved-name");
+const usernameSaved = localStorage.getItem("username");
+/* const usernameValue = localStorage.getItem("username"); */
 
 /* Hidden and visible state of an element */
 const hiddenState = (e)=> {
@@ -26,11 +29,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const nameWindow = document.querySelector(".name-window");
     const projectsWindow = document.querySelector(".projects");
     const continueBtn = document.querySelector(".continue");
-    const usernameSaved = localStorage.getItem("username");
 
     if (usernameSaved) {
         nameWindow.classList.remove("visible-flex");
         visibleState(projectsWindow);
+        nameSaved.textContent = usernameSaved;
     } else {
         nameWindow.classList.add("visible-flex");
 
@@ -52,9 +55,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
         
             nameWindow.classList.remove("visible-flex");
             visibleState(projectsWindow);
+            nameSaved.textContent = username; //In this part, username is entered since with the usernameSaved constant it loads from the beginning and if we use this constant the name stored in localStorage would not be seen since the information would be taken from localstorage when the DOM was loaded as soon as the page started and it was empty.
         
             console.log("El nombre del usuario es " + username);
-        }
+        } 
 
         /* Event that detects that we press the continue button and activates the function that validates the name to be able to continue */
         continueBtn.addEventListener("click", (e)=> {
