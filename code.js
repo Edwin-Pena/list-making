@@ -6,12 +6,19 @@ const closeSearchBtn = document.querySelector(".nav__search-close");
 const usernameInput = document.getElementById("username");
 const nameSaved = document.getElementById("saved-name");
 const usernameSaved = localStorage.getItem("username");
+const settingsBtn = document.querySelector(".nav-settings__icon");
+const settingsMenu = document.querySelector(".settings-menu");
+const fontsBtn = document.querySelector(".dropdown-menu__chevron");
+const fontsOptions = document.querySelector(".font-styles");
 /* const usernameValue = localStorage.getItem("username"); */
 
 /* Hidden and visible state of an element */
 const hiddenState = (e)=> {
     if (e.classList.contains("visible")) {
         e.classList.remove("visible");
+        e.classList.add("hidden");
+    } else if (e.classList.contains("visible-flex")) {
+        e.classList.remove("visible-flex");
         e.classList.add("hidden");
     }
 }
@@ -20,8 +27,33 @@ const visibleState = (e)=> {
     if (e.classList.contains("hidden")) {
         e.classList.remove("hidden");
         e.classList.add("visible");
+    } 
+}
+
+const visibleStateFlex = (e)=> {
+    if (e.classList.contains("hidden")) {
+        e.classList.remove("hidden");
+        e.classList.add("visible-flex");
+    } 
+}
+
+//Function to show or hide menu when they are clicked
+const clickVisibility = (e)=> {
+    if (e.classList.contains("visible-flex") || e.classList.contains("visible")) {
+        hiddenState(e);
+    } else {
+        visibleStateFlex(e);
     }
 }
+
+//function to hide the menu when clicking outside it
+const clickOutside = (e, menu)=> {
+    e.stopPropagation();
+    if (!menu.contains(e.target)) {
+        hiddenState(menu);
+    }
+}
+
 
 /* Function that detects whether the user already has the name saved to display or not the page that contains the projects */
 document.addEventListener("DOMContentLoaded", ()=> {
@@ -95,4 +127,32 @@ closeSearchBtn.addEventListener("click", (e)=> {
     inputSearch.value = "";
     hiddenState(closeSearchBtn);
     inputSearch.focus();
+})
+
+
+//event that detects and displays the options when clicked on settings
+settingsBtn.addEventListener ("click", (e)=> {
+    e.stopPropagation();
+    clickVisibility(settingsMenu);
+})
+
+//event that detects that when we click outside the settings menu it is hidden
+document.addEventListener("click", (e)=> {
+    clickOutside(e, settingsMenu);
+
+   if (settingsMenu.classList.contains("hidden")) {
+    fontsBtn.classList.remove("icon-rotation");
+    hiddenState(fontsOptions);
+   }
+});
+
+fontsBtn.addEventListener("click", (e)=> {
+    e.stopPropagation();
+
+    if (fontsBtn.classList.contains("icon-rotation")){
+        fontsBtn.classList.remove("icon-rotation");
+    } else {
+        fontsBtn.classList.add("icon-rotation");
+    }
+    clickVisibility(fontsOptions);
 })

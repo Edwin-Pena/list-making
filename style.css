@@ -32,6 +32,11 @@
     display: flex;
 }
 
+.icon-rotation {
+    transform: rotate(180deg);
+}
+
+/* -------------------------------- */
 
 body {
     height: 100%;
@@ -290,15 +295,19 @@ body {
     cursor: pointer;
 }
 
-.sec-menu {
+.nav__user-icon:hover {
+    background: var(--light-grey);
+}
+
+.settings-menu {
     position: absolute;
     right: 5px;
-    display: flex;
     flex-direction: column;
     background: #fff;
     width: 140px;
     padding: 20px;
-    row-gap: 10px;
+    border-radius: 10px;
+    row-gap: 15px;
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
 }
 
@@ -366,7 +375,37 @@ body {
     margin: 0;
 }
 
-.nav__user-icon:hover {
+.fonts {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.dropdown-menu__chevron {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.font-styles {
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 12px;
+    transition: .3s;
+}
+
+.font-styles__item {
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.font-styles__item:hover {
     background: var(--light-grey);
 }
 

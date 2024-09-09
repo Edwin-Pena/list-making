@@ -42,18 +42,28 @@
                 </a>
             </div>
             <div class="nav__user">
-                <div class="nav__settings">
-                    <i class="fa-solid fa-gear nav__user-icon"></i>
-                    <div class="sec-menu">
+                <div class="nav-settings">
+                    <i class="fa-solid fa-gear nav-settings__icon nav__user-icon"></i>
+                    <div class="settings-menu hidden">
                         <h4 class="sec-menu__title">Settings</h4>
                         <div class="theme">
                             <p class="theme__text item">Theme</p>
                             <input type="checkbox" class="Theme__toggle-buton">
                         </div>
-                        <p class="sec-menu__font item">Font style</p>
+                        <div class="fonts">
+                            <div class="dropdown-menu">
+                                <p class="dropdown-menu__text item">Font style</p>
+                                <i class="fa-solid fa-chevron-up dropdown-menu__chevron"></i>
+                            </div>
+                            <ul class="font-styles hidden">
+                                <li class="font-styles__item">Arial</li>
+                                <li class="font-styles__item">Times new roman</li>
+                                <li class="font-styles__item">Comic sans</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="nav__profile">
+                <div class="nav-profile">
                     <i class="fa-solid fa-user nav__user-icon"></i>
                 </div>
             </div>
