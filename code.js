@@ -6,10 +6,16 @@ const closeSearchBtn = document.querySelector(".nav__search-close");
 const usernameInput = document.getElementById("username");
 const nameSaved = document.getElementById("saved-name");
 const usernameSaved = localStorage.getItem("username");
+
 const settingsBtn = document.querySelector(".nav-settings__icon");
 const settingsMenu = document.querySelector(".settings-menu");
 const fontsBtn = document.querySelector(".dropdown-menu__chevron");
 const fontsOptions = document.querySelector(".font-styles");
+const userBtn = document.querySelector(".nav-profile__icon");
+const userMenu = document.querySelector(".profile-menu");
+
+const menus = document.querySelectorAll(".menu-styles");
+
 /* const usernameValue = localStorage.getItem("username"); */
 
 /* Hidden and visible state of an element */
@@ -52,6 +58,14 @@ const clickOutside = (e, menu)=> {
     if (!menu.contains(e.target)) {
         hiddenState(menu);
     }
+}
+
+//function to hide the fonts styles when settings menu is hide
+const hideFonts = ()=> {
+    if (settingsMenu.classList.contains("hidden")) {
+        fontsBtn.classList.remove("icon-rotation");
+        hiddenState(fontsOptions);
+       }
 }
 
 
@@ -132,22 +146,13 @@ closeSearchBtn.addEventListener("click", (e)=> {
 
 //event that detects and displays the options when clicked on settings
 settingsBtn.addEventListener ("click", (e)=> {
-    e.stopPropagation();
+    e.stopPropagation();//no funciona si lo quito
     clickVisibility(settingsMenu);
-})
-
-//event that detects that when we click outside the settings menu it is hidden
-document.addEventListener("click", (e)=> {
-    clickOutside(e, settingsMenu);
-
-   if (settingsMenu.classList.contains("hidden")) {
-    fontsBtn.classList.remove("icon-rotation");
-    hiddenState(fontsOptions);
-   }
+    clickOutside(e, userMenu);
 });
 
-fontsBtn.addEventListener("click", (e)=> {
-    e.stopPropagation();
+fontsBtn.addEventListener("click", ()=> {
+    /* e.stopPropagation(); */
 
     if (fontsBtn.classList.contains("icon-rotation")){
         fontsBtn.classList.remove("icon-rotation");
@@ -156,3 +161,21 @@ fontsBtn.addEventListener("click", (e)=> {
     }
     clickVisibility(fontsOptions);
 })
+
+
+userBtn.addEventListener ("click", (e)=> {
+    e.stopPropagation();
+    clickVisibility(userMenu);
+    clickOutside(e, settingsMenu);
+    hideFonts();
+});
+
+//event that detects that when we click outside some menu it is hidden
+document.addEventListener("click", (e)=> {
+    e.stopPropagation();
+    
+    menus.forEach(menu => {
+        clickOutside(e, menu);
+        hideFonts();
+    })
+});

@@ -299,7 +299,7 @@ body {
     background: var(--light-grey);
 }
 
-.settings-menu {
+.menu-styles {
     position: absolute;
     right: 5px;
     flex-direction: column;
@@ -407,6 +407,48 @@ body {
 
 .font-styles__item:hover {
     background: var(--light-grey);
+}
+
+.profile-menu {
+    /* display: flex; */
+    align-items: center;
+}
+
+.user-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-grey);
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.user-image__icon {
+    color: #fff;
+    font-size: 40px;
+}
+
+.change-nameBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-grey);
+    margin: 5px 0 5px 0;
+    padding: 6px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.change-nameBtn:hover {
+    background: var(--primary-grey);
+}
+
+.change-nameBtn__text {
+    margin: 0;
+    color: #fff;
 }
 
 .projects__content {
