@@ -400,6 +400,7 @@ body {
 }
 
 .font-styles__item {
+    color: var(--primary-grey);
     padding: 4px 8px;
     border-radius: 5px;
     cursor: pointer;
@@ -606,7 +607,7 @@ body {
     font-weight: bold;
 }
 
-.board__div-settings {
+.board-settings {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -615,17 +616,38 @@ body {
     right: 10px;
     width: 15px;
     height: 15px;
-    padding: 7px;
+    padding: 7px;/* modificardo */
     margin: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
-.board__div-settings:hover {
+.board-settings__icon {
+    cursor: pointer;
+    padding: 6px;
+}
+
+.board-settings__icon:hover {
     background: #5a5a5a;
     border-radius: 50%;
 }
 
-/* .board__settings{
-    
+.board-settings__menu {
+    /* display: flex; */
+    top: 22px;
+    right: 0;
+    left: 6px;
+    padding: 10px 10px;
+    z-index: 50;
+    row-gap: 0;
 }
- */
+
+.Board-menu__option {
+    color: var(--primary-grey);
+    margin: 0;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.Board-menu__option:hover {
+    background: var(--light-grey);
+}

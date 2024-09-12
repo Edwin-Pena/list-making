@@ -13,6 +13,8 @@ const fontsBtn = document.querySelector(".dropdown-menu__chevron");
 const fontsOptions = document.querySelector(".font-styles");
 const userBtn = document.querySelector(".nav-profile__icon");
 const userMenu = document.querySelector(".profile-menu");
+const boardBtns = document.querySelectorAll(".board-settings__icon");
+const boardMenus = document.querySelectorAll(".board-settings__menu");
 
 const menus = document.querySelectorAll(".menu-styles");
 
@@ -146,13 +148,14 @@ closeSearchBtn.addEventListener("click", (e)=> {
 
 //event that detects and displays the options when clicked on settings
 settingsBtn.addEventListener ("click", (e)=> {
-    e.stopPropagation();//no funciona si lo quito
+    e.stopPropagation();
     clickVisibility(settingsMenu);
     clickOutside(e, userMenu);
+    boardMenus.forEach(menu => hiddenState(menu));
 });
 
+//event that displays fonts and rotates the chevron icon
 fontsBtn.addEventListener("click", ()=> {
-    /* e.stopPropagation(); */
 
     if (fontsBtn.classList.contains("icon-rotation")){
         fontsBtn.classList.remove("icon-rotation");
@@ -162,12 +165,26 @@ fontsBtn.addEventListener("click", ()=> {
     clickVisibility(fontsOptions);
 })
 
-
+//event that displays the user profile menu
 userBtn.addEventListener ("click", (e)=> {
     e.stopPropagation();
     clickVisibility(userMenu);
     clickOutside(e, settingsMenu);
+    boardMenus.forEach(menu => hiddenState(menu));
     hideFonts();
+});
+
+//Foreach and event that show board menus
+boardBtns.forEach((boardBtn, index) => {
+    boardBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        boardMenus.forEach(menu => hiddenState(menu));
+        clickVisibility(boardMenus[index]);
+        clickOutside(e, userMenu);
+        clickOutside(e, settingsMenu);
+        hideFonts();
+
+    });
 });
 
 //event that detects that when we click outside some menu it is hidden
