@@ -1,6 +1,8 @@
 "use strict";
 
 /* Global constants */
+const projectsWindow = document.querySelector(".projects");
+
 const inputSearch = document.querySelector(".nav__search");
 const closeSearchBtn = document.querySelector(".nav__search-close");
 const usernameInput = document.getElementById("username");
@@ -18,9 +20,15 @@ const boardMenus = document.querySelectorAll(".board-settings__menu");
 
 const menus = document.querySelectorAll(".menu-styles");
 
-/* const usernameValue = localStorage.getItem("username"); */
+//Constants and functions to create new boards
+const createBoardBtn = document.getElementById("add-board");
+const newboardVindow = document.querySelector(".newBoard-window");
 
-/* Hidden and visible state of an element */
+const addBoards = document.getElementById("add-board");
+const IDBRequest = indexedDB.open("boardsBase", 1);
+
+
+//Hidden and visible state of an element
 const hiddenState = (e)=> {
     if (e.classList.contains("visible")) {
         e.classList.remove("visible");
@@ -75,7 +83,7 @@ const hideFonts = ()=> {
 document.addEventListener("DOMContentLoaded", ()=> {
 
     const nameWindow = document.querySelector(".name-window");
-    const projectsWindow = document.querySelector(".projects");
+    /* const projectsWindow = document.querySelector(".projects"); */
     const continueBtn = document.querySelector(".continue");
 
     if (usernameSaved) {
@@ -187,12 +195,50 @@ boardBtns.forEach((boardBtn, index) => {
     });
 });
 
+//code for add new boards with Api
+
+//The window to create new boards appears when we click on the newboard button
+createBoardBtn.addEventListener("click", () => {
+    newboardVindow.classList.add("active");
+})
+
+
+// Detects mousedown on the div so that only when the click is initially on the div and not on one of its children, it is hidden
+
+newboardVindow.addEventListener("mousedown", (e) => {
+    if (e.target === newboardVindow) {
+        newboardVindow.classList.remove("active");
+    }
+});
+
+//Esto es lo que sigue cuando ya termine de darle estilos a la ventana emergente de cuando le ds click en new board
+/* IDBRequest.addEventListener("upgradeneeded", () => {
+    const db = IDBRequest.result;
+    db.createObjectStore("boards", {
+        autoIncrement: true
+    })
+});
+
+IDBRequest.addEventListener("success", () => {
+    console.log("Todo salio bien panardo");
+    readObjects();
+    
+});
+
+IDBRequest.addEventListener("error", () => {
+    console.log("Ocurrio un error al abrir la base de datos");
+});
+
+addBoards.addEventListener("click", () => {
+    //aqui se pone codigo para que aparezca la ventana emergente de cuando le doy a agregar un nuevo board
+}); */
+
+
+
 //event that detects that when we click outside some menu it is hidden
 document.addEventListener("click", (e)=> {
-    e.stopPropagation();
-    
     menus.forEach(menu => {
         clickOutside(e, menu);
         hideFonts();
-    })
+    }); 
 });
