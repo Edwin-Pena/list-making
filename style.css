@@ -196,7 +196,8 @@ body {
 /* nav-bar */
 .nav {
     display: flex;
-    position: relative;
+    position: fixed;
+    background: #fff;
     width: 100%;
     padding: 15px 0;
     justify-content: center;
@@ -421,7 +422,6 @@ body {
 }
 
 .profile-menu {
-    /* display: flex; */
     align-items: center;
 }
 
@@ -469,12 +469,12 @@ body {
 /* sidebar */
 .sidebar {
     position: fixed;
-    /* display: flex; */
     flex-direction: column;
     width: 150px;
     height: 100vh;
-    margin: 0;
+    margin: 60px 0 0 0;
     padding: 0;
+    border-top: 2px solid var(--border-light-color);
     border-right: 2px solid var(--border-light-color);
 }
 
@@ -515,6 +515,7 @@ body {
     padding: 0 0 0 150px;
     width: 100%;
     box-sizing: border-box;
+    margin: 50px 0 0 0;
 }
 
 .title {
@@ -530,22 +531,18 @@ body {
     margin: 50px 0 0 0 ;
 }
 
-/* .username-saved {
-    
-} */
-
 .title__message {
     font-size: 24px;
     margin: 6px 0 0 0;
     color: var(--secondary-grey);
 }
 
-/* ----Boards----- */
+/* ----Boards section----- */
 .boards-section {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 40px 45px 0 45px;
+    padding: 40px 80px 40px 80px;
     box-sizing: border-box;
 }
 
@@ -562,10 +559,23 @@ body {
     line-height: 30px;
 }
 
+.new-board-btn {
+    width: 100px;
+    background: var(--secondary-grey);
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 12px;
+    width: 130px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.new-board-btn:hover {
+    background: var(--primary-grey);
+}
+
 .sort {
     display: flex;
-    position: relative;
-    top: 5px;
     align-items: center;
     background: var(--light-grey);
     color: var(--secondary-grey);
@@ -597,7 +607,7 @@ body {
     margin: 35px 0 0 0;
 }
 
-/* styles for adding boards */
+/* styles for adding boards window */
 .newBoard-window {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
@@ -633,6 +643,7 @@ body {
 .newBoard-title {
     display: flex;
     column-gap: 10px;
+    margin: 0 0 10px 0;
 }
 
 .newBoard-title__input {
@@ -649,10 +660,40 @@ body {
     transition: box-shadow .15s;
 }
 
+.newBoard-title__input.invalid {
+    box-shadow: inset 0 0 0 2px var(--ds-border-focused, var(--error-color));
+}
+
 .newBoard-title__input:focus {
     box-shadow: inset 0 0 0 2px var(--ds-border-focused, var(--primary-grey));
 }
+.newBoard-title__input.invalid:focus {
+    box-shadow: inset 0 0 0 2px var(--ds-border-focused, var(--error-color));
+}
 
+.newBoard-floatWindow__restrictions {
+    font-size: 14px;
+    width: 250px;
+    position: absolute;
+    top: 62px;
+    color: var(--error-color);
+}
+
+.newBoard-title__Btn {
+    border: none;
+    background: var(--secondary-grey);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.newBoard-title__Btn:hover {
+    background: var(--primary-grey);
+}
+
+/* styles for added boards */
 .board {
     background: var(--secondary-grey);
     display: flex;
@@ -682,9 +723,8 @@ body {
     right: 10px;
     width: 15px;
     height: 15px;
-    padding: 7px;/* modificardo */
+    padding: 7px;
     margin: 0;
-    /* cursor: pointer; */
 }
 
 .board-settings__icon {
@@ -698,10 +738,9 @@ body {
 }
 
 .board-settings__menu {
-    /* display: flex; */
     top: 22px;
-    right: 0;
-    left: 6px;
+    width: 90px;
+    left: -10px;
     padding: 10px 10px;
     z-index: 50;
     row-gap: 0;

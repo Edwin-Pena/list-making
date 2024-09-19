@@ -99,6 +99,7 @@
                     <p class="sidebar__icon-text">Help</p>
                 </a>
             </div>
+            <!-- Section where the main information and the projects saved by the user are located -->
             <div class="main">
                 <div class="title">
                     <h1 class="title__name">Hi <span class="username-saved" id="saved-name"></span></h1>
@@ -107,36 +108,25 @@
                 <div class="boards-section">
                     <div class="board-title">
                         <h2 class="board-title__text">Boards</h2>
+                        <div class="new-board-btn" id="add-board">
+                            <div class="board__name">Create new board</div>
+                        </div>
                         <div class="sort">
                             <p class="sort__text">sort by</p>
                             <i class="fa-solid fa-sliders sort__icon"></i>
                         </div>
                     </div>
+                    <div class="newBoard-window opacity">
+                        <div class="newBoard-floatWindow">
+                            <p class="newBoard-floatWindow__text">Board title</p>
+                            <div class="newBoard-title">
+                                <input type="text" class="newBoard-title__input" id="board-title">
+                                <p class="newBoard-floatWindow__restrictions hidden">Must be greater than or equal to 4 letters*</p>
+                                <button class="newBoard-title__Btn" id="add">Add</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="boards-container">
-                        <div class="board board--add" id="add-board">
-                            <div class="board__name">Create new board</div>
-                        </div>
-
-                        <div class="newBoard-window opacity">
-                            <div class="newBoard-floatWindow">
-                                <p class="newBoard-floatWindow__text">Board title</p>
-                                <div class="newBoard-title">
-                                    <input type="text" class="newBoard-title__input" id="board-title">
-                                    <button class="newBoard-title__Btn" id="add">Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="board">
-                            <div class="board__name">board name</div>
-                            <div class="board-settings">
-                                <i class="fa-solid fa-ellipsis board-settings__icon"></i>
-                                <div class="board-settings__menu menu-styles hidden" id="menu-1">
-                                    <p class="Board-menu__option">Edit name</p>
-                                    <p class="Board-menu__option">Move to trash</p>
-                                </div>
-                            </div>
-                        </div> -->
                         
                     </div>
                 </div>
