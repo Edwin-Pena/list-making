@@ -1,7 +1,7 @@
 .welcome {
   background: url("/Images/name-window.jpg");
   background-size: 100%;
-  display: flex;
+  /* display: flex; */
   height: 100vh;
   justify-content: center;
   align-items: center;
