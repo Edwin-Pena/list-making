@@ -8,11 +8,20 @@ interface Props {
 
 const Welcome: React.FC<Props> = ({ onSaveName }) => {
   const [userName, setUserName] = useState("");
+  const [invalidUserName, setInvalidUserName] = useState(false);
 
   const handleSaveUserName = () => {
-    if (userName.trim()) {
+    if (/^[a-zA-ZáéíóúÁÉÍÓÚ ]{4,20}$/.test(userName)) {
       saveUserName(userName);
       onSaveName();
+    } else {
+      setInvalidUserName(true);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSaveUserName();
     }
   };
 
@@ -29,13 +38,19 @@ const Welcome: React.FC<Props> = ({ onSaveName }) => {
             <input
               id="username"
               type="text"
-              className="input__name"
+              className={`input__name ${invalidUserName ? "error" : ""}`}
               autoComplete="off"
               required
               onChange={(e) => setUserName(e.target.value)}
+              onKeyDown={handleKeyDown}
               value={userName}
+              /*  pattern="" */
             />
-            <div className="input__label-line">Enter your name</div>
+            <div
+              className={`input__label-line ${invalidUserName ? "error" : ""}`}
+            >
+              Enter your name
+            </div>
           </div>
           <div className="continue">
             <i
@@ -43,8 +58,11 @@ const Welcome: React.FC<Props> = ({ onSaveName }) => {
               onClick={handleSaveUserName}
             ></i>
           </div>
-          <p className="name__error hidden">
-            Please enter a valid name that has more than 4 letters
+          <p
+            className={`name__error ${invalidUserName ? "visible" : "hidden"}`}
+          >
+            Please enter a valid name with 4 to 20 letters, no numbers or
+            special characters.
           </p>
         </div>
       </div>

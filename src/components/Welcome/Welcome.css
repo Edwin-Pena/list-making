@@ -76,7 +76,7 @@
   color: var(--secondary-grey);
   padding: 0 10px;
   background: #fff;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .input__name:focus {
@@ -111,5 +111,18 @@
   left: 5px;
   font-size: 14px;
   color: var(--error-color);
-  width: 80%;
+  width: 82%;
+}
+
+.input__name.error {
+  border: 2px solid var(--error-color);
+}
+
+.input__label-line.error {
+  color: var(--error-color);
+}
+
+.input__name:focus + .input__label-line.error,
+.input__name:valid + .input__label-line.error {
+  color: var(--error-color);
 }
